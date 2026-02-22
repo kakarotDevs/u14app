@@ -16,7 +16,10 @@
             content="Fixtures, match details, and club updates for North Lakes United FC U14."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://kakarotDevs.github.io/u14app/" />
+        <meta
+            property="og:url"
+            content="https://kakarotDevs.github.io/u14app/"
+        />
         <link rel="canonical" href="https://kakarotDevs.github.io/u14app/" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -69,16 +72,14 @@
         </script>
         <script src="https://cdn.tailwindcss.com"></script>
     </head>
-    <body
-        class="min-h-screen bg-[#0a0a0a] font-sans text-white"
-    >
+    <body class="min-h-screen bg-[#0a0a0a] font-sans text-white">
         <div class="mx-auto max-w-[1100px] px-6 pb-16 pt-12">
             <header
                 class="grid gap-6 motion-safe:animate-rise lg:grid-cols-[auto_1fr] lg:items-center"
                 style="animation-delay: 0.05s"
             >
                 <img
-                    class="h-24 w-24 rounded-full border border-[#d6dced] bg-white p-0.5 shadow-[0_12px_30px_rgba(16,42,99,0.28)]"
+                    class="h-24 w-24 rounded-full"
                     src="assets/nlulogo.png"
                     alt="North Lakes United FC logo"
                     width="96"
@@ -101,27 +102,28 @@
                             updates.
                         </p>
                     </div>
-                    <nav
-                        class="flex flex-wrap gap-3"
-                        aria-label="Primary"
-                    >
+                    <nav class="flex flex-wrap gap-3" aria-label="Primary">
                         <a
-                            class="rounded-full bg-sea/20 px-4 py-2 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-sea/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f2b544]"
+                            data-rotate-text
+                            class="rounded-full bg-[#f2b544] px-4 py-2 text-sm font-bold text-[#1c3f93] transition hover:-translate-y-0.5 hover:bg-[#d9a43d] hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
                             href="#next-game"
                             >Next Match</a
                         >
                         <a
-                            class="rounded-full bg-sea/20 px-4 py-2 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-sea/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f2b544]"
+                            data-rotate-text
+                            class="rounded-full bg-[#f2b544] px-4 py-2 text-sm font-bold text-[#1c3f93] transition hover:-translate-y-0.5 hover:bg-[#d9a43d] hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
                             href="#fixtures"
                             >Fixtures</a
                         >
                         <a
-                            class="rounded-full bg-sea/20 px-4 py-2 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-sea/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f2b544]"
+                            data-rotate-text
+                            class="rounded-full bg-[#f2b544] px-4 py-2 text-sm font-bold text-[#1c3f93] transition hover:-translate-y-0.5 hover:bg-[#d9a43d] hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
                             href="#news"
                             >Club News</a
                         >
                         <a
-                            class="rounded-full bg-sea/20 px-4 py-2 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-sea/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f2b544]"
+                            data-rotate-text
+                            class="rounded-full bg-[#f2b544] px-4 py-2 text-sm font-bold text-[#1c3f93] transition hover:-translate-y-0.5 hover:bg-[#d9a43d] hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
                             href="#contacts"
                             >Contacts</a
                         >
@@ -157,9 +159,7 @@
                             Round 6
                         </div>
                     </div>
-                    <div
-                        class="mt-6 grid gap-5 md:grid-cols-2 lg:grid-cols-4"
-                    >
+                    <div class="mt-6 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
                         <div>
                             <p
                                 class="mb-2 text-[0.75rem] font-bold uppercase tracking-[2px] text-[#f2b544]"
@@ -194,7 +194,9 @@
                             >
                                 Match Contact
                             </p>
-                            <p class="font-semibold text-white">Coach Sam — 0412 555 018</p>
+                            <p class="font-semibold text-white">
+                                Coach Sam — 0412 555 018
+                            </p>
                             <p class="mt-1 text-sm text-[#9ca3af]">
                                 Message if you are running late or need kit
                                 support.
@@ -315,16 +317,16 @@
                             U14 squad
                         </div>
                     </div>
-                    <div
-                        class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
-                    >
+                    <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                         <div
                             class="rounded-2xl border border-white/20 bg-white/10 p-4"
                         >
                             <h3 class="text-lg font-semibold text-[#f2b544]">
                                 Coach
                             </h3>
-                            <p class="mt-1 font-semibold text-white">Sam Carter</p>
+                            <p class="mt-1 font-semibold text-white">
+                                Sam Carter
+                            </p>
                             <p class="mt-1 text-sm text-[#9ca3af]">
                                 0412 555 018 • sam.carter@nlu-fc.com
                             </p>
@@ -335,7 +337,9 @@
                             <h3 class="text-lg font-semibold text-[#f2b544]">
                                 Team Manager
                             </h3>
-                            <p class="mt-1 font-semibold text-white">Leah Tran</p>
+                            <p class="mt-1 font-semibold text-white">
+                                Leah Tran
+                            </p>
                             <p class="mt-1 text-sm text-[#9ca3af]">
                                 0413 223 940 • u14manager@nlu-fc.com
                             </p>
@@ -380,8 +384,18 @@
             class="fixed bottom-5 right-5 z-40 flex items-center gap-3 rounded-full bg-gradient-to-r from-[#1c3f93] via-[#2563eb] to-[#0ea5e9] px-6 py-4 text-sm font-bold text-white shadow-[0_10px_40px_rgba(28,63,147,0.4)] transition hover:-translate-y-1 hover:shadow-[0_14px_50px_rgba(28,63,147,0.5)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f2b544] active:scale-95"
             type="button"
         >
-            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+            <svg
+                class="h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+                />
             </svg>
             Team Chat
         </button>
@@ -393,7 +407,9 @@
             <div
                 class="w-full max-w-lg overflow-hidden rounded-3xl bg-white/95 shadow-[0_25px_80px_rgba(28,63,147,0.25)] backdrop-blur-md"
             >
-                <div class="bg-gradient-to-r from-[#1c3f93] via-[#2563eb] to-[#0ea5e9] p-5">
+                <div
+                    class="bg-gradient-to-r from-[#1c3f93] via-[#2563eb] to-[#0ea5e9] p-5"
+                >
                     <div class="flex items-center justify-between">
                         <div>
                             <h2 class="text-xl font-bold text-white">
@@ -438,7 +454,10 @@
                                 Save
                             </button>
                         </div>
-                        <p id="chatProfileHint" class="mt-2 text-xs text-[#2f3c53]">
+                        <p
+                            id="chatProfileHint"
+                            class="mt-2 text-xs text-[#2f3c53]"
+                        >
                             Your name helps others know who's chatting
                         </p>
                     </div>
@@ -465,7 +484,10 @@
                             class="space-y-3 text-sm"
                             aria-live="polite"
                         ></ul>
-                        <p id="chatEmpty" class="py-8 text-center text-sm text-[#64748b]">
+                        <p
+                            id="chatEmpty"
+                            class="py-8 text-center text-sm text-[#64748b]"
+                        >
                             No messages yet. Start the conversation!
                         </p>
                     </div>
@@ -493,6 +515,86 @@
             </div>
         </div>
 
+        <style>
+            [data-rotate-text] {
+                position: relative;
+                overflow: hidden;
+                letter-spacing: normal;
+            }
+
+            [data-rotate-text] .fx-rotator {
+                display: inline-block;
+                position: relative;
+                height: 1.1em;
+                transform-style: preserve-3d;
+                perspective: 1000px;
+                vertical-align: baseline;
+            }
+
+            [data-rotate-text] .fx-rotator > span {
+                display: block;
+                transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+                transition-delay: calc(var(--i) * 25ms);
+                backface-visibility: hidden;
+                line-height: 1.1;
+            }
+
+            [data-rotate-text] .fx-rotator-front {
+                transform: translateY(0) rotateX(0deg);
+                transform-origin: 50% 0%;
+            }
+
+            [data-rotate-text] .fx-rotator-back {
+                position: absolute;
+                left: 0;
+                top: 0;
+                transform: translateY(100%) rotateX(-90deg);
+                transform-origin: 50% 100%;
+            }
+
+            [data-rotate-text]:hover .fx-rotator-front,
+            [data-rotate-text]:focus-visible .fx-rotator-front {
+                transform: translateY(-100%) rotateX(90deg);
+            }
+
+            [data-rotate-text]:hover .fx-rotator-back,
+            [data-rotate-text]:focus-visible .fx-rotator-back {
+                transform: translateY(0) rotateX(0deg);
+            }
+
+            [data-rotate-text] .fx-rotator-space {
+                width: 0.18em;
+            }
+
+            [data-rotate-text] .fx-rotator-group {
+                display: inline-flex;
+                align-items: center;
+                line-height: 1.1;
+                height: 1.1em;
+                transition: transform 0.25s ease;
+                transform-origin: 50% 50%;
+            }
+
+            [data-rotate-text]:hover .fx-rotator-group,
+            [data-rotate-text]:focus-visible .fx-rotator-group {
+                transform: scale(1.03);
+            }
+        </style>
+        <script>
+            document.querySelectorAll('[data-rotate-text]').forEach(link => {
+                const text = link.textContent.trim();
+                let html = '<span class="fx-rotator-group">';
+                text.split('').forEach((char, i) => {
+                    if (char === ' ') {
+                        html += '<span class="fx-rotator-space"></span>';
+                    } else {
+                        html += `<span class="fx-rotator" style="--i: ${i}"><span class="fx-rotator-front">${char}</span><span class="fx-rotator-back">${char}</span></span>`;
+                    }
+                });
+                html += '</span>';
+                link.innerHTML = html;
+            });
+        </script>
         <script src="htmx.min.js" defer></script>
         <script src="chat.js" defer></script>
     </body>
