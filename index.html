@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>North Lakes United FC U14</title>
+    <meta
+      name="description"
+      content="North Lakes United Football Club U14 fixtures, next match details, and team contacts."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="site-header">
+        <div class="crest">NLU</div>
+        <div class="title-wrap">
+          <p class="eyebrow">North Lakes • U14</p>
+          <h1>North Lakes United Football Club</h1>
+          <p class="subtitle">Season hub for fixtures, match notes, and club updates.</p>
+        </div>
+        <nav class="site-nav">
+          <a href="#next-game">Next Match</a>
+          <a href="#fixtures">Fixtures</a>
+          <a href="#news">Club News</a>
+          <a href="#contacts">Contacts</a>
+        </nav>
+      </header>
+
+      <main>
+        <section id="next-game" class="card hero" style="--delay: 0.05s">
+          <div class="hero-header">
+            <div>
+              <p class="eyebrow">Next Match</p>
+              <h2>North Lakes U14 vs. Redcliffe Rangers</h2>
+              <p class="meta">Saturday, 18 May • 2:15 PM</p>
+            </div>
+            <div class="tag">Round 6</div>
+          </div>
+          <div class="hero-grid">
+            <div>
+              <p class="label">Location</p>
+              <p class="value">North Lakes Sports Complex — Field 2</p>
+              <p class="note">
+                Arrive by 1:40 PM for warm-up. Parking fills quickly near the
+                aquatic centre.
+              </p>
+            </div>
+            <div>
+              <p class="label">Directions</p>
+              <p class="value">Lot 2, 31 Tauer Court, North Lakes</p>
+              <p class="note">Entry via the western gate. Follow orange signage.</p>
+            </div>
+            <div>
+              <p class="label">Match Contact</p>
+              <p class="value">Coach Sam — 0412 555 018</p>
+              <p class="note">
+                Message if you are running late or need kit support.
+              </p>
+            </div>
+            <div>
+              <p class="label">Kit Notes</p>
+              <ul class="list">
+                <li>Blue jersey, white shorts, blue socks</li>
+                <li>Shin guards required</li>
+                <li>Bring a light jacket for sideline</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="fixtures" class="card" style="--delay: 0.12s">
+          <div class="section-header">
+            <div>
+              <p class="eyebrow">Fixtures</p>
+              <h2>2026 Season Matches</h2>
+            </div>
+            <div class="pill">Updated weekly</div>
+          </div>
+          <div
+            class="fixtures"
+            hx-get="partials/fixtures.html"
+            hx-trigger="load"
+            hx-swap="innerHTML"
+          >
+            <div class="loading">Loading fixtures...</div>
+          </div>
+        </section>
+
+        <section id="news" class="card" style="--delay: 0.18s">
+          <div class="section-header">
+            <div>
+              <p class="eyebrow">Club News</p>
+              <h2>Updates & Reminders</h2>
+            </div>
+            <div class="pill">Latest posts</div>
+          </div>
+          <div
+            class="news-grid"
+            hx-get="partials/news.html"
+            hx-trigger="load"
+            hx-swap="innerHTML"
+          >
+            <div class="loading">Fetching club news...</div>
+          </div>
+        </section>
+
+        <section id="contacts" class="card" style="--delay: 0.24s">
+          <div class="section-header">
+            <div>
+              <p class="eyebrow">Contacts</p>
+              <h2>Team & Club Touchpoints</h2>
+            </div>
+            <div class="pill">U14 squad</div>
+          </div>
+          <div class="contacts-grid">
+            <div class="contact-card">
+              <h3>Coach</h3>
+              <p class="value">Sam Carter</p>
+              <p class="note">0412 555 018 • sam.carter@nlu-fc.com</p>
+            </div>
+            <div class="contact-card">
+              <h3>Team Manager</h3>
+              <p class="value">Leah Tran</p>
+              <p class="note">0413 223 940 • u14manager@nlu-fc.com</p>
+            </div>
+            <div class="contact-card">
+              <h3>Club Office</h3>
+              <p class="value">North Lakes United FC</p>
+              <p class="note">admin@nlu-fc.com • (07) 3204 1188</p>
+            </div>
+          </div>
+          <div class="team-placeholder">
+            <h3>Squad List</h3>
+            <p class="note">Roster and player numbers coming soon.</p>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>North Lakes United Football Club • U14</p>
+        <p>Built for families and supporters. Hosted on GitHub Pages.</p>
+      </footer>
+    </div>
+
+    <script src="htmx.min.js"></script>
+  </body>
+</html>
