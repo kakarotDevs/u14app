@@ -19,11 +19,11 @@ npx serve -l 3000
 - `partials/` HTML snippets loaded by htmx
 - `assets/` images and static assets
 
-## Future chat
+## Chat
 
-When chat is added, plan for a small backend that stores:
+Team chat is available via the "Open Chat" button. Currently uses localStorage (each device has its own data).
 
-- team members
-- conversations
-- messages
-- moderation and access control
+- Set your name to post messages
+- Create or switch rooms
+- Edit/delete only your own messages
+- For shared chat across users, a backend will be needed later
