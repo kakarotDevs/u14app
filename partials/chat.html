@@ -1,0 +1,109 @@
+<div
+    class="w-full max-w-lg overflow-hidden rounded-3xl bg-white/95 shadow-[0_25px_80px_rgba(28,63,147,0.25)] backdrop-blur-md"
+>
+    <div
+        class="bg-gradient-to-r from-[#1c3f93] via-[#2563eb] to-[#0ea5e9] p-5"
+    >
+        <div class="flex items-center justify-between">
+            <div>
+                <h2 class="text-xl font-bold text-white">
+                    Team Chat
+                </h2>
+                <p class="mt-1 text-sm text-white/80">
+                    Connect with your teammates
+                </p>
+            </div>
+            <button
+                id="chatClose"
+                class="rounded-full bg-white/20 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/30"
+                type="button"
+            >
+                Close
+            </button>
+        </div>
+    </div>
+
+    <div class="p-5">
+        <div
+            class="rounded-2xl bg-gradient-to-br from-[#f0f9ff] to-[#e0f2fe] p-4"
+        >
+            <p
+                class="text-xs font-bold uppercase tracking-[2px] text-[#1c3f93]"
+            >
+                Your Profile
+            </p>
+            <div class="mt-3 flex gap-2">
+                <input
+                    id="chatName"
+                    class="flex-1 rounded-xl border-2 border-[#bae6fd] bg-white px-4 py-2.5 text-sm transition focus:border-[#0ea5e9] focus:outline-none focus:ring-2 focus:ring-[#0ea5e9]/20"
+                    type="text"
+                    placeholder="Enter your name..."
+                    autocomplete="name"
+                />
+                <button
+                    id="chatSaveProfile"
+                    class="rounded-xl bg-gradient-to-r from-[#1c3f93] to-[#2563eb] px-5 py-2.5 text-sm font-bold text-white shadow-md transition hover:shadow-lg active:scale-95"
+                    type="button"
+                >
+                    Save
+                </button>
+            </div>
+            <p
+                id="chatProfileHint"
+                class="mt-2 text-xs text-[#2f3c53]"
+            >
+                Your name helps others know who's chatting
+            </p>
+        </div>
+
+        <div class="mt-4 flex items-center gap-2">
+            <select
+                id="chatRoom"
+                class="flex-1 rounded-xl border-2 border-[#e1e7f4] bg-white px-4 py-2.5 text-sm font-medium transition focus:border-[#0ea5e9] focus:outline-none focus:ring-2 focus:ring-[#0ea5e9]/20"
+            ></select>
+            <button
+                id="chatNewRoom"
+                class="rounded-xl border-2 border-[#f2b544] bg-gradient-to-r from-[#fef3c7] to-[#fde68a] px-4 py-2.5 text-sm font-bold text-[#92400e] shadow-md transition hover:shadow-lg active:scale-95"
+                type="button"
+            >
+                + Room
+            </button>
+        </div>
+
+        <div
+            class="mt-4 max-h-64 overflow-y-auto rounded-2xl bg-gradient-to-br from-[#f8fafc] to-[#f1f5f9] p-4"
+        >
+            <ul
+                id="chatMessages"
+                class="space-y-3 text-sm"
+                aria-live="polite"
+            ></ul>
+            <p
+                id="chatEmpty"
+                class="py-8 text-center text-sm text-[#64748b]"
+            >
+                No messages yet. Start the conversation!
+            </p>
+        </div>
+
+        <form id="chatForm" class="mt-4">
+            <textarea
+                id="chatInput"
+                class="min-h-[100px] w-full rounded-2xl border-2 border-[#e1e7f4] bg-white px-4 py-3 text-sm transition focus:border-[#0ea5e9] focus:outline-none focus:ring-2 focus:ring-[#0ea5e9]/20"
+                placeholder="Share something with the team..."
+                required
+            ></textarea>
+            <div class="mt-3 flex items-center justify-between">
+                <p class="text-xs text-[#64748b]">
+                    Edit or delete only your messages
+                </p>
+                <button
+                    class="rounded-xl bg-gradient-to-r from-[#1c3f93] via-[#2563eb] to-[#0ea5e9] px-6 py-2.5 text-sm font-bold text-white shadow-md transition hover:shadow-lg active:scale-95"
+                    type="submit"
+                >
+                    Send Message
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
