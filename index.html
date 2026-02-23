@@ -105,25 +105,25 @@
                     <nav class="flex flex-wrap gap-3" aria-label="Primary">
                         <a
                             data-rotate-text
-                            class="rounded-full bg-[#a29063] px-4 py-2 text-sm font-medium text-[#1c3f93] transition hover:-translate-y-0.5 hover:bg-[#8b7a55] hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                            class="rounded-full border-2 border-[#1c3f93] px-4 py-2 text-sm font-medium text-[#a29063] transition hover:-translate-y-0.5 hover:bg-[#1c3f93] hover:text-white hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
                             href="#next-game"
                             >Next Match</a
                         >
                         <a
                             data-rotate-text
-                            class="rounded-full bg-[#a29063] px-4 py-2 text-sm font-medium text-[#1c3f93] transition hover:-translate-y-0.5 hover:bg-[#8b7a55] hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                            class="rounded-full border-2 border-[#1c3f93] px-4 py-2 text-sm font-medium text-[#a29063] transition hover:-translate-y-0.5 hover:bg-[#1c3f93] hover:text-white hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
                             href="#fixtures"
                             >Fixtures</a
                         >
                         <a
                             data-rotate-text
-                            class="rounded-full bg-[#a29063] px-4 py-2 text-sm font-medium text-[#1c3f93] transition hover:-translate-y-0.5 hover:bg-[#8b7a55] hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                            class="rounded-full border-2 border-[#1c3f93] px-4 py-2 text-sm font-medium text-[#a29063] transition hover:-translate-y-0.5 hover:bg-[#1c3f93] hover:text-white hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
                             href="#news"
                             >Club News</a
                         >
                         <a
                             data-rotate-text
-                            class="rounded-full bg-[#a29063] px-4 py-2 text-sm font-medium text-[#1c3f93] transition hover:-translate-y-0.5 hover:bg-[#8b7a55] hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                            class="rounded-full border-2 border-[#1c3f93] px-4 py-2 text-sm font-medium text-[#a29063] transition hover:-translate-y-0.5 hover:bg-[#1c3f93] hover:text-white hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
                             href="#contacts"
                             >Contacts</a
                         >
@@ -134,9 +134,13 @@
             <main class="mt-9 grid gap-7">
                 <section
                     id="next-game"
-                    class="rounded-[22px] border-2 p-7 shadow-[0_20px_50px_rgba(10,18,45,0.14)] motion-safe:animate-rise transition-all duration-300"
+                    class="relative overflow-hidden rounded-[22px] border-2 p-7 shadow-[0_20px_50px_rgba(10,18,45,0.14)] motion-safe:animate-rise transition-all duration-300"
                     style="animation-delay: 0.12s"
                 >
+                    <div
+                        id="next-match-round-watermark"
+                        class="pointer-events-none absolute -right-4 -top-8 select-none text-[6rem] font-bold leading-none opacity-10"
+                    ></div>
                     <div
                         class="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between"
                     >
@@ -159,12 +163,6 @@
                             >
                                 Loading...
                             </p>
-                        </div>
-                        <div
-                            id="next-match-round"
-                            class="rounded-xl px-4 py-2 text-sm font-bold"
-                        >
-                            --
                         </div>
                     </div>
                     <div class="mt-6 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
@@ -210,7 +208,7 @@
                                 Match Contact
                             </p>
                             <p id="next-match-contact" class="font-semibold">
-                                Coach Sandra — <a href="tel:0491331609">0491 331 609</a>
+                                Add match contact details here
                             </p>
                             <p id="next-match-contact-hint" class="mt-1 text-sm">
                                 Message if you are running late or need kit
@@ -259,7 +257,11 @@
                             </div>
                         </div>
                     </div>
-                    <div id="fixtures-list" class="mt-6 grid gap-4">
+                    <div id="fixtures-list" class="mt-6 grid gap-4"
+                        hx-get="partials/fixtures.html"
+                        hx-trigger="load"
+                        hx-swap="innerHTML"
+                    >
                         <div
                             class="rounded-xl bg-white/10 px-4 py-3 text-sm font-semibold text-[#d1d5db]"
                         >
@@ -340,7 +342,7 @@
                             <h3 class="text-lg font-semibold text-[#a29063]">
                                 Coach
                             </h3>
-                            <p class="mt-1 font-semibold text-white">Sandra</p>
+                            <p class="mt-1 font-semibold text-white">Add coach name here</p>
                             <p class="mt-1 text-sm text-[#9ca3af]">
                                 add coaches number here • add coachs email here
                             </p>
@@ -404,8 +406,12 @@
 
             <footer class="mt-8 text-center text-sm text-[#a1a1aa]">
                 <p>North Lakes United Football Club • U14</p>
-                <p class="mt-1">
-                    Built for families and supporters. Hosted on GitHub Pages.
+                <p class="mt-1 inline-flex items-center justify-center gap-2">
+                    Built for families and supporters. Hosted on
+                    <svg class="inline h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                    GitHub Pages.
                 </p>
             </footer>
         </div>
@@ -524,119 +530,100 @@
         <script src="chat.js" defer></script>
         <script>
             const venueAddresses = {
-                    "Bardon Latrobe": { address: "247 Bowman Parade, Bardon QLD 4065", mapsUrl: "https://www.google.com/maps/search/?api=1&query=Bowman+Park+Bardon+QLD" },
-                    "North Lakes Utd FC": { address: "Lot 2, 31 Tauer Court, North Lakes QLD 4509", mapsUrl: "https://www.google.com/maps/search/?api=1&query=Kinsellas+Sporting+Complex+North+Lakes" },
-                    "Bribie Island": { address: "First Ave, Bribie Island QLD 4507", mapsUrl: "https://www.google.com/maps/search/?api=1&query=Bribie+Island+Sports+Complex" },
-                    "North Star FC": { address: "50A Zillmere Rd, Zillmere QLD 4034", mapsUrl: "https://www.google.com/maps/search/?api=1&query=North+Star+FC+Zillmere" },
-                };
+                "Bardon Latrobe": { address: "247 Bowman Parade, Bardon QLD 4065", mapsUrl: "https://www.google.com/maps/search/?api=1&query=Bowman+Park+Bardon+QLD" },
+                "North Lakes Utd FC": { address: "Lot 2, 31 Tauer Court, North Lakes QLD 4509", mapsUrl: "https://www.google.com/maps/search/?api=1&query=Kinsellas+Sporting+Complex+North+Lakes" },
+                "Bribie Island": { address: "First Ave, Bribie Island QLD 4507", mapsUrl: "https://www.google.com/maps/search/?api=1&query=Bribie+Island+Sports+Complex" },
+                "North Star FC": { address: "50A Zillmere Rd, Zillmere QLD 4034", mapsUrl: "https://www.google.com/maps/search/?api=1&query=North+Star+FC+Zillmere" },
+            };
 
-                function applyHomeTheme() {
-                    const section = document.getElementById('next-game');
-                    section.className = 'rounded-[22px] border-2 border-[#1c3f93] bg-gradient-to-br from-[#1c3f93] via-[#2563eb] to-[#1e40af] p-7 shadow-[0_20px_50px_rgba(10,18,45,0.14)] motion-safe:animate-rise transition-all duration-300';
-                    
-                    document.getElementById('next-match-venue-type').className = 'rounded-full bg-[#a29063] px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#1c3f93]';
-                    document.getElementById('next-match-venue-type').textContent = 'HOME';
-                    
-                    document.getElementById('next-match-label').className = 'text-[0.75rem] font-bold uppercase tracking-[3px] text-[#a29063]';
-                    document.getElementById('next-match-teams').className = 'text-2xl font-bold text-[#a29063]';
-                    document.getElementById('next-match-datetime').className = 'mt-1 font-semibold text-[#d1d5db]';
-                    document.getElementById('next-match-round').className = 'rounded-xl bg-[#a29063] px-4 py-2 text-sm font-bold text-[#1c3f93]';
-                    
-                    const labels = ['next-match-location-label', 'next-match-directions-label', 'next-match-contact-label', 'next-match-kit-label'];
-                    labels.forEach(id => document.getElementById(id).className = 'mb-2 text-[0.75rem] font-bold uppercase tracking-[2px] text-[#a29063]');
-                    
-                    document.getElementById('next-match-venue').className = 'font-semibold text-white';
-                    document.getElementById('next-match-location-hint').className = 'mt-1 text-sm text-[#9ca3af]';
-                    document.getElementById('next-match-directions-hint').className = 'mt-1 text-sm text-[#9ca3af]';
-                    document.getElementById('next-match-contact').className = 'font-semibold text-white';
-                    document.getElementById('next-match-contact-hint').className = 'mt-1 text-sm text-[#9ca3af]';
-                    document.getElementById('next-match-kit').className = 'list-disc pl-5 text-sm text-[#9ca3af]';
-                    
-                    const contactLink = document.querySelector('#next-match-contact a');
-                    if (contactLink) contactLink.className = 'hover:text-[#a29063] transition';
-                }
+            function applyHomeTheme() {
+                const section = document.getElementById('next-game');
+                section.className = 'relative overflow-hidden rounded-[22px] border-2 border-[#1c3f93] bg-gradient-to-br from-[#1c3f93] via-[#2563eb] to-[#1e40af] p-7 shadow-[0_20px_50px_rgba(10,18,45,0.14)] motion-safe:animate-rise transition-all duration-300';
+                
+                document.getElementById('next-match-venue-type').className = 'rounded-full bg-[#a29063] px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#1c3f93]';
+                document.getElementById('next-match-venue-type').textContent = 'HOME';
+                
+                document.getElementById('next-match-label').className = 'text-[0.75rem] font-bold uppercase tracking-[3px] text-[#a29063]';
+                document.getElementById('next-match-teams').className = 'text-2xl font-bold text-[#a29063]';
+                document.getElementById('next-match-datetime').className = 'mt-1 font-semibold text-[#d1d5db]';
+                document.getElementById('next-match-round-watermark').className = 'pointer-events-none absolute -right-4 -top-8 select-none text-[6rem] font-bold leading-none opacity-10 text-[#a29063]';
+                
+                const labels = ['next-match-location-label', 'next-match-directions-label', 'next-match-contact-label', 'next-match-kit-label'];
+                labels.forEach(id => document.getElementById(id).className = 'mb-2 text-[0.75rem] font-bold uppercase tracking-[2px] text-[#a29063]');
+                
+                document.getElementById('next-match-venue').className = 'font-semibold text-white';
+                document.getElementById('next-match-location-hint').className = 'mt-1 text-sm text-[#9ca3af]';
+                document.getElementById('next-match-directions-hint').className = 'mt-1 text-sm text-[#9ca3af]';
+                document.getElementById('next-match-contact').className = 'font-semibold text-white';
+                document.getElementById('next-match-contact-hint').className = 'mt-1 text-sm text-[#9ca3af]';
+                document.getElementById('next-match-kit').className = 'list-disc pl-5 text-sm text-[#9ca3af]';
+            }
 
-                function applyAwayTheme() {
-                    const section = document.getElementById('next-game');
-                    section.className = 'rounded-[22px] border-2 border-[#a29063] bg-gradient-to-br from-[#a29063] via-[#b5a073] to-[#8a7a53] p-7 shadow-[0_20px_50px_rgba(162,144,99,0.2)] motion-safe:animate-rise transition-all duration-300';
-                    
-                    document.getElementById('next-match-venue-type').className = 'rounded-full bg-[#1c3f93] px-3 py-1 text-xs font-bold uppercase tracking-wider text-white';
-                    document.getElementById('next-match-venue-type').textContent = 'AWAY';
-                    
-                    document.getElementById('next-match-label').className = 'text-[0.75rem] font-bold uppercase tracking-[3px] text-[#1c3f93]';
-                    document.getElementById('next-match-teams').className = 'text-2xl font-bold text-[#1c3f93]';
-                    document.getElementById('next-match-datetime').className = 'mt-1 font-semibold text-[#102a63]';
-                    document.getElementById('next-match-round').className = 'rounded-xl bg-[#1c3f93] px-4 py-2 text-sm font-bold text-white';
-                    
-                    const labels = ['next-match-location-label', 'next-match-directions-label', 'next-match-contact-label', 'next-match-kit-label'];
-                    labels.forEach(id => document.getElementById(id).className = 'mb-2 text-[0.75rem] font-bold uppercase tracking-[2px] text-[#1c3f93]');
-                    
-                    document.getElementById('next-match-venue').className = 'font-semibold text-[#102a63]';
-                    document.getElementById('next-match-location-hint').className = 'mt-1 text-sm text-[#1e40af]/70';
-                    document.getElementById('next-match-directions-hint').className = 'mt-1 text-sm text-[#1e40af]/70';
-                    document.getElementById('next-match-contact').className = 'font-semibold text-[#102a63]';
-                    document.getElementById('next-match-contact-hint').className = 'mt-1 text-sm text-[#1e40af]/70';
-                    document.getElementById('next-match-kit').className = 'list-disc pl-5 text-sm text-[#1e40af]/80';
-                    
-                    const contactLink = document.querySelector('#next-match-contact a');
-                    if (contactLink) contactLink.className = 'hover:text-[#1c3f93] transition underline';
-                }
+            function applyAwayTheme() {
+                const section = document.getElementById('next-game');
+                section.className = 'relative overflow-hidden rounded-[22px] border-2 border-[#a29063] bg-gradient-to-br from-[#a29063] via-[#b5a073] to-[#8a7a53] p-7 shadow-[0_20px_50px_rgba(162,144,99,0.2)] motion-safe:animate-rise transition-all duration-300';
+                
+                document.getElementById('next-match-venue-type').className = 'rounded-full bg-[#1c3f93] px-3 py-1 text-xs font-bold uppercase tracking-wider text-white';
+                document.getElementById('next-match-venue-type').textContent = 'AWAY';
+                
+                document.getElementById('next-match-label').className = 'text-[0.75rem] font-bold uppercase tracking-[3px] text-[#1c3f93]';
+                document.getElementById('next-match-teams').className = 'text-2xl font-bold text-[#1c3f93]';
+                document.getElementById('next-match-datetime').className = 'mt-1 font-semibold text-[#102a63]';
+                document.getElementById('next-match-round-watermark').className = 'pointer-events-none absolute -right-4 -top-8 select-none text-[6rem] font-bold leading-none opacity-10 text-[#1c3f93]';
+                
+                const labels = ['next-match-location-label', 'next-match-directions-label', 'next-match-contact-label', 'next-match-kit-label'];
+                labels.forEach(id => document.getElementById(id).className = 'mb-2 text-[0.75rem] font-bold uppercase tracking-[2px] text-[#1c3f93]');
+                
+                document.getElementById('next-match-venue').className = 'font-semibold text-[#102a63]';
+                document.getElementById('next-match-location-hint').className = 'mt-1 text-sm text-[#1e40af]/70';
+                document.getElementById('next-match-directions-hint').className = 'mt-1 text-sm text-[#1e40af]/70';
+                document.getElementById('next-match-contact').className = 'font-semibold text-[#102a63]';
+                document.getElementById('next-match-contact-hint').className = 'mt-1 text-sm text-[#1e40af]/70';
+                document.getElementById('next-match-kit').className = 'list-disc pl-5 text-sm text-[#1e40af]/80';
+            }
 
-                async function loadFixtures() {
-                    try {
-                        const response = await fetch("partials/fixtures.html");
-                        const html = await response.text();
-                        const parser = new DOMParser();
-                        const doc = parser.parseFromString(html, "text/html");
-                        const fixtures = doc.querySelectorAll("[data-fixture]");
+            document.body.addEventListener('htmx:afterSwap', (e) => {
+                if (e.detail.target.id === 'fixtures-list') {
+                    const fixtures = document.querySelectorAll('#fixtures-list [data-fixture]');
+                    
+                    if (fixtures.length > 0) {
+                        const first = fixtures[0];
+                        const home = first.dataset.home;
+                        const away = first.dataset.away;
+                        const displayDate = first.dataset.displayDate;
+                        const time = first.dataset.time;
+                        const venue = first.dataset.venue;
+                        const round = first.dataset.round;
+                        const venueData = venueAddresses[home] || { address: "Address TBC", mapsUrl: "#" };
+                        const isHome = home === "North Lakes Utd FC";
 
-                        if (fixtures.length > 0) {
-                            const first = fixtures[0];
-                            const home = first.dataset.home;
-                            const away = first.dataset.away;
-                            const displayDate = first.dataset.displayDate;
-                            const time = first.dataset.time;
-                            const venue = first.dataset.venue;
-                            const round = first.dataset.round;
-                            const venueData = venueAddresses[home] || { address: "Address TBC", mapsUrl: "#" };
-                            const isHome = home === "North Lakes Utd FC";
-
-                            if (isHome) {
-                                applyHomeTheme();
-                                document.getElementById("next-match-address").innerHTML = `<a href="${venueData.mapsUrl}" target="_blank" rel="noopener" class="text-white hover:text-[#a29063] underline transition">${venueData.address}</a>`;
-                            } else {
-                                applyAwayTheme();
-                                document.getElementById("next-match-address").innerHTML = `<a href="${venueData.mapsUrl}" target="_blank" rel="noopener" class="text-[#102a63] hover:text-[#1c3f93] underline transition">${venueData.address}</a>`;
-                            }
-
-                            document.getElementById("next-match-teams").textContent = `${home} vs. ${away}`;
-                            document.getElementById("next-match-datetime").textContent = `${displayDate} • ${time}`;
-                            document.getElementById("next-match-venue").textContent = venue;
-                            document.getElementById("next-match-round").textContent = round;
-                        }
-
-                        const fixturesList = document.getElementById("fixtures-list");
-                        if (fixtures.length > 1) {
-                            fixturesList.innerHTML = "";
-                            fixtures.forEach((fixture, index) => {
-                                if (index === 0) return;
-                                const clone = fixture.cloneNode(true);
-                                const homeTeam = fixture.dataset.home;
-                                const venueData = venueAddresses[homeTeam] || { mapsUrl: "#" };
-                                const venueEl = clone.querySelector(".text-\\[\\#9ca3af\\]");
-                                if (venueEl) {
-                                    venueEl.innerHTML = `<a href="${venueData.mapsUrl}" target="_blank" rel="noopener" class="hover:text-[#a29063] transition">${venueEl.textContent}</a>`;
-                                }
-                                fixturesList.appendChild(clone);
-                            });
+                        if (isHome) {
+                            applyHomeTheme();
+                            document.getElementById("next-match-address").innerHTML = `<a href="${venueData.mapsUrl}" target="_blank" rel="noopener" class="text-white hover:text-[#a29063] underline transition">${venueData.address}</a>`;
                         } else {
-                            fixturesList.innerHTML = '<div class="rounded-xl bg-white/10 px-4 py-3 text-sm text-[#9ca3af]">No upcoming fixtures</div>';
+                            applyAwayTheme();
+                            document.getElementById("next-match-address").innerHTML = `<a href="${venueData.mapsUrl}" target="_blank" rel="noopener" class="text-[#102a63] hover:text-[#1c3f93] underline transition">${venueData.address}</a>`;
                         }
-                    } catch (e) {
-                        console.error("Failed to load fixtures:", e);
+
+                        document.getElementById("next-match-teams").textContent = `${home} vs. ${away}`;
+                        document.getElementById("next-match-datetime").textContent = `${displayDate} • ${time}`;
+                        document.getElementById("next-match-venue").textContent = venue;
+                        document.getElementById("next-match-round-watermark").textContent = round;
+
+                        first.remove();
                     }
+
+                    const remainingFixtures = document.querySelectorAll('#fixtures-list [data-fixture]');
+                    remainingFixtures.forEach((fixture) => {
+                        const homeTeam = fixture.dataset.home;
+                        const venueData = venueAddresses[homeTeam] || { mapsUrl: "#" };
+                        const venueEl = fixture.querySelector(".text-\\[\\#9ca3af\\]");
+                        if (venueEl) {
+                            venueEl.innerHTML = `<a href="${venueData.mapsUrl}" target="_blank" rel="noopener" class="hover:text-[#a29063] transition">${venueEl.textContent}</a>`;
+                        }
+                    });
                 }
-                document.addEventListener("DOMContentLoaded", loadFixtures);
+            });
         </script>
     </body>
 </html>
