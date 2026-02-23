@@ -160,7 +160,7 @@
                             updates.
                         </p>
                     </div>
-                    <nav class="flex flex-wrap gap-3" aria-label="Primary">
+                    <nav class="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:gap-3" aria-label="Primary">
                         <a
                             data-rotate-text
                             class="rounded-full border-2 border-[#1c3f93] px-4 py-2 text-sm font-medium text-[#a29063] transition hover:-translate-y-0.5 hover:bg-[#1c3f93] hover:text-white hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
@@ -197,7 +197,7 @@
                 >
                     <div
                         id="next-match-round-watermark"
-                        class="pointer-events-none absolute -right-4 -top-8 select-none text-[11rem] font-bold leading-none opacity-10"
+                        class="pointer-events-none absolute -right-1 -top-4 select-none text-[5rem] font-bold leading-none opacity-10 md:-right-4 md:-top-8 md:text-[11rem]"
                     ></div>
                     <div
                         class="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between"
@@ -458,12 +458,13 @@
                 </section>
             </main>
 
-            <footer class="mt-12 text-center text-sm text-[#6b7280]">
+            <footer class="mt-12 text-left text-sm text-[#6b7280]">
                 <p class="font-medium text-[#9ca3af]">
                     North Lakes United Football Club • U14
                 </p>
-                <p class="mt-2 inline-flex items-center justify-center gap-2">
-                    Built for families and supporters. Hosted on
+                <p class="mt-1">Built for families and supporters.</p>
+                <p class="mt-1 inline-flex items-center gap-1.5">
+                    Hosted on
                     <svg
                         class="inline h-4 w-4"
                         fill="currentColor"
@@ -630,7 +631,7 @@
                 document.getElementById(
                     "next-match-round-watermark",
                 ).className =
-                    "pointer-events-none absolute -right-4 -top-8 select-none text-[11rem] font-bold leading-none opacity-20 text-[#a29063]";
+                    "pointer-events-none absolute -right-1 -top-4 select-none text-[5rem] font-bold leading-none opacity-20 text-[#a29063] md:-right-4 md:-top-8 md:text-[11rem]";
 
                 const labels = [
                     "next-match-location-label",
@@ -678,7 +679,7 @@
                 document.getElementById(
                     "next-match-round-watermark",
                 ).className =
-                    "pointer-events-none absolute -right-4 -top-8 select-none text-[11rem] font-bold leading-none opacity-15 text-[#1c3f93]";
+                    "pointer-events-none absolute -right-1 -top-4 select-none text-[5rem] font-bold leading-none opacity-15 text-[#1c3f93] md:-right-4 md:-top-8 md:text-[11rem]";
 
                 const labels = [
                     "next-match-location-label",
