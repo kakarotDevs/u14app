@@ -43,7 +43,7 @@
                         colors: {
                             sea: "#1c3f93",
                             "sea-dark": "#102a63",
-                            sun: "#f2b544",
+                            sun: "#a29063",
                         },
                         boxShadow: {
                             card: "0 20px 50px rgba(10, 18, 45, 0.14)",
@@ -88,7 +88,7 @@
                 <div class="flex flex-col gap-5">
                     <div>
                         <p
-                            class="mb-2 text-[0.75rem] font-bold uppercase tracking-[3px] text-[#f2b544]"
+                            class="mb-2 text-[0.75rem] font-bold uppercase tracking-[3px] text-[#a29063]"
                         >
                             North Lakes • U14
                         </p>
@@ -105,25 +105,25 @@
                     <nav class="flex flex-wrap gap-3" aria-label="Primary">
                         <a
                             data-rotate-text
-                            class="rounded-full bg-[#f2b544] px-4 py-2 text-sm font-medium text-[#1c3f93] transition hover:-translate-y-0.5 hover:bg-[#d9a43d] hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                            class="rounded-full bg-[#a29063] px-4 py-2 text-sm font-medium text-[#1c3f93] transition hover:-translate-y-0.5 hover:bg-[#8b7a55] hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
                             href="#next-game"
                             >Next Match</a
                         >
                         <a
                             data-rotate-text
-                            class="rounded-full bg-[#f2b544] px-4 py-2 text-sm font-medium text-[#1c3f93] transition hover:-translate-y-0.5 hover:bg-[#d9a43d] hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                            class="rounded-full bg-[#a29063] px-4 py-2 text-sm font-medium text-[#1c3f93] transition hover:-translate-y-0.5 hover:bg-[#8b7a55] hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
                             href="#fixtures"
                             >Fixtures</a
                         >
                         <a
                             data-rotate-text
-                            class="rounded-full bg-[#f2b544] px-4 py-2 text-sm font-medium text-[#1c3f93] transition hover:-translate-y-0.5 hover:bg-[#d9a43d] hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                            class="rounded-full bg-[#a29063] px-4 py-2 text-sm font-medium text-[#1c3f93] transition hover:-translate-y-0.5 hover:bg-[#8b7a55] hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
                             href="#news"
                             >Club News</a
                         >
                         <a
                             data-rotate-text
-                            class="rounded-full bg-[#f2b544] px-4 py-2 text-sm font-medium text-[#1c3f93] transition hover:-translate-y-0.5 hover:bg-[#d9a43d] hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                            class="rounded-full bg-[#a29063] px-4 py-2 text-sm font-medium text-[#1c3f93] transition hover:-translate-y-0.5 hover:bg-[#8b7a55] hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
                             href="#contacts"
                             >Contacts</a
                         >
@@ -134,34 +134,35 @@
             <main class="mt-9 grid gap-7">
                 <section
                     id="next-game"
-                    class="rounded-[22px] border-2 border-[#1c3f93] bg-gradient-to-br from-[#1c3f93] via-[#2563eb] to-[#1e40af] p-7 shadow-[0_20px_50px_rgba(10,18,45,0.14)] motion-safe:animate-rise"
+                    class="rounded-[22px] border-2 p-7 shadow-[0_20px_50px_rgba(10,18,45,0.14)] motion-safe:animate-rise transition-all duration-300"
                     style="animation-delay: 0.12s"
                 >
                     <div
                         class="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between"
                     >
                         <div>
-                            <p
-                                class="mb-2 text-[0.75rem] font-bold uppercase tracking-[3px] text-[#f2b544]"
-                            >
-                                Next Match
-                            </p>
+                            <div class="flex items-center gap-3 mb-2">
+                                <span id="next-match-venue-type" class="rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wider">--</span>
+                                <p id="next-match-label" class="text-[0.75rem] font-bold uppercase tracking-[3px]">
+                                    Next Match
+                                </p>
+                            </div>
                             <h2
                                 id="next-match-teams"
-                                class="text-2xl font-bold text-[#f2b544]"
+                                class="text-2xl font-bold"
                             >
                                 Loading...
                             </h2>
                             <p
                                 id="next-match-datetime"
-                                class="mt-1 font-semibold text-[#d1d5db]"
+                                class="mt-1 font-semibold"
                             >
                                 Loading...
                             </p>
                         </div>
                         <div
                             id="next-match-round"
-                            class="rounded-xl bg-[#f2b544] px-4 py-2 text-sm font-bold text-[#1c3f93]"
+                            class="rounded-xl px-4 py-2 text-sm font-bold"
                         >
                             --
                         </div>
@@ -169,57 +170,61 @@
                     <div class="mt-6 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
                         <div>
                             <p
-                                class="mb-2 text-[0.75rem] font-bold uppercase tracking-[2px] text-[#f2b544]"
+                                id="next-match-location-label"
+                                class="mb-2 text-[0.75rem] font-bold uppercase tracking-[2px]"
                             >
                                 Location
                             </p>
                             <p
                                 id="next-match-venue"
-                                class="font-semibold text-white"
+                                class="font-semibold"
                             >
                                 Loading...
                             </p>
-                            <p class="mt-1 text-sm text-[#9ca3af]">
+                            <p id="next-match-location-hint" class="mt-1 text-sm">
                                 Arrive 30 mins early for warm-up.
                             </p>
                         </div>
                         <div>
                             <p
-                                class="mb-2 text-[0.75rem] font-bold uppercase tracking-[2px] text-[#f2b544]"
+                                id="next-match-directions-label"
+                                class="mb-2 text-[0.75rem] font-bold uppercase tracking-[2px]"
                             >
                                 Directions
                             </p>
                             <p
                                 id="next-match-address"
-                                class="font-semibold text-white"
+                                class="font-semibold"
                             >
                                 Loading...
                             </p>
-                            <p class="mt-1 text-sm text-[#9ca3af]">
+                            <p id="next-match-directions-hint" class="mt-1 text-sm">
                                 Arrive 30 mins early for warm-up.
                             </p>
                         </div>
                         <div>
                             <p
-                                class="mb-2 text-[0.75rem] font-bold uppercase tracking-[2px] text-[#f2b544]"
+                                id="next-match-contact-label"
+                                class="mb-2 text-[0.75rem] font-bold uppercase tracking-[2px]"
                             >
                                 Match Contact
                             </p>
-                            <p class="font-semibold text-white">
-                                Coach Sandra — <a href="tel:0491331609" class="hover:text-[#f2b544] transition">0491 331 609</a>
+                            <p id="next-match-contact" class="font-semibold">
+                                Coach Sandra — <a href="tel:0491331609">0491 331 609</a>
                             </p>
-                            <p class="mt-1 text-sm text-[#9ca3af]">
+                            <p id="next-match-contact-hint" class="mt-1 text-sm">
                                 Message if you are running late or need kit
                                 support.
                             </p>
                         </div>
                         <div>
                             <p
-                                class="mb-2 text-[0.75rem] font-bold uppercase tracking-[2px] text-[#f2b544]"
+                                id="next-match-kit-label"
+                                class="mb-2 text-[0.75rem] font-bold uppercase tracking-[2px]"
                             >
                                 Kit Notes
                             </p>
-                            <ul class="list-disc pl-5 text-sm text-[#9ca3af]">
+                            <ul id="next-match-kit" class="list-disc pl-5 text-sm">
                                 <li>Club shorts and socks</li>
                                 <li>Shin guards required</li>
                                 <li>Bring a light jacket for sideline</li>
@@ -238,17 +243,17 @@
                     >
                         <div>
                             <p
-                                class="mb-2 text-[0.75rem] font-bold uppercase tracking-[3px] text-[#f2b544]"
+                                class="mb-2 text-[0.75rem] font-bold uppercase tracking-[3px] text-[#a29063]"
                             >
                                 Fixtures
                             </p>
-                            <h2 class="text-2xl font-bold text-[#f2b544]">
+                            <h2 class="text-2xl font-bold text-[#a29063]">
                                 2026 Season Matches
                             </h2>
                         </div>
                         <div class="flex items-center gap-2">
                             <div
-                                class="rounded-full bg-[#f2b544]/20 px-4 py-2 text-sm font-semibold text-[#f2b544]"
+                                class="rounded-full bg-[#a29063]/20 px-4 py-2 text-sm font-semibold text-[#a29063]"
                             >
                                 Updated weekly
                             </div>
@@ -273,17 +278,17 @@
                     >
                         <div>
                             <p
-                                class="mb-2 text-[0.75rem] font-bold uppercase tracking-[3px] text-[#f2b544]"
+                                class="mb-2 text-[0.75rem] font-bold uppercase tracking-[3px] text-[#a29063]"
                             >
                                 Club News
                             </p>
-                            <h2 class="text-2xl font-bold text-[#f2b544]">
+                            <h2 class="text-2xl font-bold text-[#a29063]">
                                 Updates &amp; Reminders
                             </h2>
                         </div>
                         <div class="flex items-center gap-2">
                             <div
-                                class="rounded-full bg-[#f2b544]/20 px-4 py-2 text-sm font-semibold text-[#f2b544]"
+                                class="rounded-full bg-[#a29063]/20 px-4 py-2 text-sm font-semibold text-[#a29063]"
                             >
                                 Latest posts
                             </div>
@@ -314,16 +319,16 @@
                     >
                         <div>
                             <p
-                                class="mb-2 text-[0.75rem] font-bold uppercase tracking-[3px] text-[#f2b544]"
+                                class="mb-2 text-[0.75rem] font-bold uppercase tracking-[3px] text-[#a29063]"
                             >
                                 Contacts
                             </p>
-                            <h2 class="text-2xl font-bold text-[#f2b544]">
+                            <h2 class="text-2xl font-bold text-[#a29063]">
                                 Team &amp; Club Touchpoints
                             </h2>
                         </div>
                         <div
-                            class="rounded-full bg-[#f2b544]/20 px-4 py-2 text-sm font-semibold text-[#f2b544]"
+                            class="rounded-full bg-[#a29063]/20 px-4 py-2 text-sm font-semibold text-[#a29063]"
                         >
                             U14 squad
                         </div>
@@ -332,7 +337,7 @@
                         <div
                             class="rounded-2xl border border-white/20 bg-white/10 p-4"
                         >
-                            <h3 class="text-lg font-semibold text-[#f2b544]">
+                            <h3 class="text-lg font-semibold text-[#a29063]">
                                 Coach
                             </h3>
                             <p class="mt-1 font-semibold text-white">Sandra</p>
@@ -343,7 +348,7 @@
                         <div
                             class="rounded-2xl border border-white/20 bg-white/10 p-4"
                         >
-                            <h3 class="text-lg font-semibold text-[#f2b544]">
+                            <h3 class="text-lg font-semibold text-[#a29063]">
                                 Team Manager
                             </h3>
                             <p class="mt-1 font-semibold text-white">
@@ -357,15 +362,15 @@
                         <div
                             class="rounded-2xl border border-white/20 bg-white/10 p-4"
                         >
-                            <h3 class="text-lg font-semibold text-[#f2b544]">
+                            <h3 class="text-lg font-semibold text-[#a29063]">
                                 Club Contact
                             </h3>
                             <p class="mt-1 font-semibold text-white">
                                 North Lakes United FC
                             </p>
                             <p class="mt-1 text-sm text-[#9ca3af]">
-                                <a href="tel:0491331609" class="hover:text-[#f2b544] transition">0491 331 609</a> • 
-                                <a href="mailto:info@northlakesunitedfc.com.au" class="hover:text-[#f2b544] transition">info@northlakesunitedfc.com.au</a>
+                                <a href="tel:0491331609" class="hover:text-[#a29063] transition">0491 331 609</a> • 
+                                <a href="mailto:info@northlakesunitedfc.com.au" class="hover:text-[#a29063] transition">info@northlakesunitedfc.com.au</a>
                             </p>
                         </div>
                     </div>
@@ -374,7 +379,7 @@
                     >
                         <div class="grid gap-4 sm:grid-cols-2">
                             <div>
-                                <h3 class="text-lg font-semibold text-[#f2b544]">
+                                <h3 class="text-lg font-semibold text-[#a29063]">
                                     Location
                                 </h3>
                                 <p class="mt-1 text-sm text-[#9ca3af]">
@@ -384,7 +389,7 @@
                                 </p>
                             </div>
                             <div>
-                                <h3 class="text-lg font-semibold text-[#f2b544]">
+                                <h3 class="text-lg font-semibold text-[#a29063]">
                                     Postal Address
                                 </h3>
                                 <p class="mt-1 text-sm text-[#9ca3af]">
@@ -407,7 +412,7 @@
 
         <button
             id="chatOpen"
-            class="fixed bottom-5 right-5 z-40 flex items-center gap-3 rounded-full bg-gradient-to-r from-[#1c3f93] via-[#2563eb] to-[#0ea5e9] px-6 py-4 text-sm font-bold text-white shadow-[0_10px_40px_rgba(28,63,147,0.4)] transition hover:-translate-y-1 hover:shadow-[0_14px_50px_rgba(28,63,147,0.5)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f2b544] active:scale-95"
+            class="fixed bottom-5 right-5 z-40 flex items-center gap-3 rounded-full bg-gradient-to-r from-[#1c3f93] via-[#2563eb] to-[#0ea5e9] px-6 py-4 text-sm font-bold text-white shadow-[0_10px_40px_rgba(28,63,147,0.4)] transition hover:-translate-y-1 hover:shadow-[0_14px_50px_rgba(28,63,147,0.5)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a29063] active:scale-95"
             type="button"
         >
             <svg
@@ -428,7 +433,7 @@
 
         <div
             id="chatOverlay"
-            class="fixed inset-0 z-50 hidden items-end justify-center bg-gradient-to-br from-[#1c3f93]/30 via-[#0ea5e9]/20 to-[#f2b544]/20 p-4 backdrop-blur-sm sm:items-center"
+            class="fixed inset-0 z-50 hidden items-end justify-center bg-gradient-to-br from-[#1c3f93]/30 via-[#0ea5e9]/20 to-[#a29063]/20 p-4 backdrop-blur-sm sm:items-center"
             hx-get="partials/chat.html"
             hx-trigger="once"
             hx-target="this"
@@ -525,6 +530,58 @@
                     "North Star FC": { address: "50A Zillmere Rd, Zillmere QLD 4034", mapsUrl: "https://www.google.com/maps/search/?api=1&query=North+Star+FC+Zillmere" },
                 };
 
+                function applyHomeTheme() {
+                    const section = document.getElementById('next-game');
+                    section.className = 'rounded-[22px] border-2 border-[#1c3f93] bg-gradient-to-br from-[#1c3f93] via-[#2563eb] to-[#1e40af] p-7 shadow-[0_20px_50px_rgba(10,18,45,0.14)] motion-safe:animate-rise transition-all duration-300';
+                    
+                    document.getElementById('next-match-venue-type').className = 'rounded-full bg-[#a29063] px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#1c3f93]';
+                    document.getElementById('next-match-venue-type').textContent = 'HOME';
+                    
+                    document.getElementById('next-match-label').className = 'text-[0.75rem] font-bold uppercase tracking-[3px] text-[#a29063]';
+                    document.getElementById('next-match-teams').className = 'text-2xl font-bold text-[#a29063]';
+                    document.getElementById('next-match-datetime').className = 'mt-1 font-semibold text-[#d1d5db]';
+                    document.getElementById('next-match-round').className = 'rounded-xl bg-[#a29063] px-4 py-2 text-sm font-bold text-[#1c3f93]';
+                    
+                    const labels = ['next-match-location-label', 'next-match-directions-label', 'next-match-contact-label', 'next-match-kit-label'];
+                    labels.forEach(id => document.getElementById(id).className = 'mb-2 text-[0.75rem] font-bold uppercase tracking-[2px] text-[#a29063]');
+                    
+                    document.getElementById('next-match-venue').className = 'font-semibold text-white';
+                    document.getElementById('next-match-location-hint').className = 'mt-1 text-sm text-[#9ca3af]';
+                    document.getElementById('next-match-directions-hint').className = 'mt-1 text-sm text-[#9ca3af]';
+                    document.getElementById('next-match-contact').className = 'font-semibold text-white';
+                    document.getElementById('next-match-contact-hint').className = 'mt-1 text-sm text-[#9ca3af]';
+                    document.getElementById('next-match-kit').className = 'list-disc pl-5 text-sm text-[#9ca3af]';
+                    
+                    const contactLink = document.querySelector('#next-match-contact a');
+                    if (contactLink) contactLink.className = 'hover:text-[#a29063] transition';
+                }
+
+                function applyAwayTheme() {
+                    const section = document.getElementById('next-game');
+                    section.className = 'rounded-[22px] border-2 border-[#a29063] bg-gradient-to-br from-[#a29063] via-[#b5a073] to-[#8a7a53] p-7 shadow-[0_20px_50px_rgba(162,144,99,0.2)] motion-safe:animate-rise transition-all duration-300';
+                    
+                    document.getElementById('next-match-venue-type').className = 'rounded-full bg-[#1c3f93] px-3 py-1 text-xs font-bold uppercase tracking-wider text-white';
+                    document.getElementById('next-match-venue-type').textContent = 'AWAY';
+                    
+                    document.getElementById('next-match-label').className = 'text-[0.75rem] font-bold uppercase tracking-[3px] text-[#1c3f93]';
+                    document.getElementById('next-match-teams').className = 'text-2xl font-bold text-[#1c3f93]';
+                    document.getElementById('next-match-datetime').className = 'mt-1 font-semibold text-[#102a63]';
+                    document.getElementById('next-match-round').className = 'rounded-xl bg-[#1c3f93] px-4 py-2 text-sm font-bold text-white';
+                    
+                    const labels = ['next-match-location-label', 'next-match-directions-label', 'next-match-contact-label', 'next-match-kit-label'];
+                    labels.forEach(id => document.getElementById(id).className = 'mb-2 text-[0.75rem] font-bold uppercase tracking-[2px] text-[#1c3f93]');
+                    
+                    document.getElementById('next-match-venue').className = 'font-semibold text-[#102a63]';
+                    document.getElementById('next-match-location-hint').className = 'mt-1 text-sm text-[#1e40af]/70';
+                    document.getElementById('next-match-directions-hint').className = 'mt-1 text-sm text-[#1e40af]/70';
+                    document.getElementById('next-match-contact').className = 'font-semibold text-[#102a63]';
+                    document.getElementById('next-match-contact-hint').className = 'mt-1 text-sm text-[#1e40af]/70';
+                    document.getElementById('next-match-kit').className = 'list-disc pl-5 text-sm text-[#1e40af]/80';
+                    
+                    const contactLink = document.querySelector('#next-match-contact a');
+                    if (contactLink) contactLink.className = 'hover:text-[#1c3f93] transition underline';
+                }
+
                 async function loadFixtures() {
                     try {
                         const response = await fetch("partials/fixtures.html");
@@ -542,11 +599,19 @@
                             const venue = first.dataset.venue;
                             const round = first.dataset.round;
                             const venueData = venueAddresses[home] || { address: "Address TBC", mapsUrl: "#" };
+                            const isHome = home === "North Lakes Utd FC";
+
+                            if (isHome) {
+                                applyHomeTheme();
+                                document.getElementById("next-match-address").innerHTML = `<a href="${venueData.mapsUrl}" target="_blank" rel="noopener" class="text-white hover:text-[#a29063] underline transition">${venueData.address}</a>`;
+                            } else {
+                                applyAwayTheme();
+                                document.getElementById("next-match-address").innerHTML = `<a href="${venueData.mapsUrl}" target="_blank" rel="noopener" class="text-[#102a63] hover:text-[#1c3f93] underline transition">${venueData.address}</a>`;
+                            }
 
                             document.getElementById("next-match-teams").textContent = `${home} vs. ${away}`;
                             document.getElementById("next-match-datetime").textContent = `${displayDate} • ${time}`;
                             document.getElementById("next-match-venue").textContent = venue;
-                            document.getElementById("next-match-address").innerHTML = `<a href="${venueData.mapsUrl}" target="_blank" rel="noopener" class="text-white hover:text-[#f2b544] underline transition">${venueData.address}</a>`;
                             document.getElementById("next-match-round").textContent = round;
                         }
 
@@ -560,7 +625,7 @@
                                 const venueData = venueAddresses[homeTeam] || { mapsUrl: "#" };
                                 const venueEl = clone.querySelector(".text-\\[\\#9ca3af\\]");
                                 if (venueEl) {
-                                    venueEl.innerHTML = `<a href="${venueData.mapsUrl}" target="_blank" rel="noopener" class="hover:text-[#f2b544] transition">${venueEl.textContent}</a>`;
+                                    venueEl.innerHTML = `<a href="${venueData.mapsUrl}" target="_blank" rel="noopener" class="hover:text-[#a29063] transition">${venueEl.textContent}</a>`;
                                 }
                                 fixturesList.appendChild(clone);
                             });

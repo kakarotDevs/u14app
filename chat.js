@@ -125,7 +125,7 @@
       const avatarColors = [
         'from-[#1c3f93] to-[#2563eb]',
         'from-[#0ea5e9] to-[#06b6d4]',
-        'from-[#f2b544] to-[#f59e0b]',
+        'from-[#a29063] to-[#f59e0b]',
         'from-[#10b981] to-[#059669]',
         'from-[#8b5cf6] to-[#7c3aed]',
       ]
