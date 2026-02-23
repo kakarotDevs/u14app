@@ -98,8 +98,8 @@
                         id="banner-message"
                         class="text-sm font-bold text-[#102a63] transition-opacity duration-500"
                     >
-                        Who's on orange duties this week? — Check the volunteer
-                        roster
+                        Who's on Oranges duty this week? — Check the volunteer
+                        notes
                     </p>
                     <svg
                         class="h-5 w-5 shrink-0 text-[#102a63]"
@@ -118,8 +118,8 @@
             </div>
             <script>
                 const bannerMessages = [
-                    "Who's on orange duties this week? — Check the volunteer roster",
-                    "Training every Thursday at 6 PM — Usually Field 5 at Kinsellas",
+                    "Who's on Oranges duty this week? — Check the volunteer notes",
+                    "Training every Thursday 6 PM — 7 PM Field 5 at Kinsellas",
                 ];
                 let bannerIndex = 0;
                 setInterval(() => {
@@ -160,7 +160,10 @@
                             updates.
                         </p>
                     </div>
-                    <nav class="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:gap-3" aria-label="Primary">
+                    <nav
+                        class="hidden flex-col gap-2 sm:flex sm:flex-row sm:flex-wrap sm:gap-3"
+                        aria-label="Primary"
+                    >
                         <a
                             data-rotate-text
                             class="rounded-full border-2 border-[#1c3f93] px-4 py-2 text-sm font-medium text-[#a29063] transition hover:-translate-y-0.5 hover:bg-[#1c3f93] hover:text-white hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
@@ -394,13 +397,8 @@
                                 Contacts
                             </p>
                             <h2 class="text-2xl font-extrabold text-[#a29063]">
-                                Team &amp; Club Touchpoints
+                                Team &amp; Club Contacts
                             </h2>
-                        </div>
-                        <div
-                            class="rounded-full border border-[#a29063]/30 px-4 py-2 text-sm font-semibold text-[#a29063]"
-                        >
-                            U14 squad
                         </div>
                     </div>
                     <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -458,7 +456,9 @@
                 </section>
             </main>
 
-            <footer class="mt-12 text-left text-sm text-[#6b7280]">
+            <footer
+                class="mt-12 text-left text-sm text-[#6b7280] md:text-center"
+            >
                 <p class="font-medium text-[#9ca3af]">
                     North Lakes United Football Club • U14
                 </p>
@@ -490,8 +490,7 @@
                 display: inline-block;
                 position: relative;
                 height: 1.1em;
-                transform-style: preserve-3d;
-                perspective: 1000px;
+                overflow: hidden;
                 vertical-align: baseline;
             }
 
@@ -499,31 +498,28 @@
                 display: block;
                 transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
                 transition-delay: calc(var(--i) * 25ms);
-                backface-visibility: hidden;
                 line-height: 1.1;
             }
 
             [data-rotate-text] .fx-rotator-front {
-                transform: translateY(0) rotateX(0deg);
-                transform-origin: 50% 0%;
+                transform: translateY(0);
             }
 
             [data-rotate-text] .fx-rotator-back {
                 position: absolute;
                 left: 0;
                 top: 0;
-                transform: translateY(100%) rotateX(-90deg);
-                transform-origin: 50% 100%;
+                transform: translateY(100%);
             }
 
             [data-rotate-text]:hover .fx-rotator-front,
             [data-rotate-text]:focus-visible .fx-rotator-front {
-                transform: translateY(-100%) rotateX(90deg);
+                transform: translateY(-100%);
             }
 
             [data-rotate-text]:hover .fx-rotator-back,
             [data-rotate-text]:focus-visible .fx-rotator-back {
-                transform: translateY(0) rotateX(0deg);
+                transform: translateY(0);
             }
 
             [data-rotate-text] .fx-rotator-space {
@@ -742,9 +738,23 @@
                                 `<a href="${venueData.mapsUrl}" target="_blank" rel="noopener" class="text-[#102a63] hover:text-[#1c3f93] underline transition">${venueData.address}</a>`;
                         }
 
-                        document.getElementById(
-                            "next-match-teams",
-                        ).textContent = `${home} vs. ${away}`;
+                        const formatMatchup = (home, away, isHome) => {
+                            const nlColor = isHome
+                                ? "text-white"
+                                : "text-[#1c3f93]";
+                            const nl = `<span class="font-extrabold ${nlColor}">North Lakes Utd FC</span>`;
+                            const oppColor = isHome
+                                ? "text-white/50"
+                                : "text-[#1c3f93]/50";
+                            const formatTeam = (team) =>
+                                team === "North Lakes Utd FC"
+                                    ? nl
+                                    : `<span class="${oppColor}">${team}</span>`;
+                            return `${formatTeam(home)} <span class="${oppColor}">vs.</span> ${formatTeam(away)}`;
+                        };
+
+                        document.getElementById("next-match-teams").innerHTML =
+                            formatMatchup(home, away, isHome);
                         document.getElementById(
                             "next-match-datetime",
                         ).textContent = `${displayDate} • ${time}`;
